@@ -1,0 +1,131 @@
+.category_tag {
+  padding: 5px;
+  font-size: 12px;
+  border: 0.5px solid #c4c4c4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+  color: #901c1c;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.category_tag:hover {
+  background-color: #901c1c;
+  -webkit-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+.navbar {
+  padding: 20px;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main_title {
+  font-weight: 100;
+  position: absolute;
+  right: 50px;
+  top: 5px;
+  color: #901c1c;
+  font-size: 36px;
+}
+
+.photografer_list {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+a {
+  text-decoration: none;
+}
+
+.photografer_card {
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px 0;
+}
+
+.photografer_card__img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.photografer_card__img:hover {
+  border-radius: 20%;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.photografer_card__title {
+  color: #d3573c;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 10px 0 0 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+.photografer_card__location {
+  font-size: 13px;
+  font-weight: bold;
+  color: #901c1c;
+  margin: 2px 0 0 0;
+}
+
+.photografer_card__description {
+  margin: 0;
+  font-size: 10px;
+}
+
+.photografer_card__price {
+  font-size: 9px;
+  margin: 0 0 10px 0;
+}
+/*# sourceMappingURL=main.css.map */
