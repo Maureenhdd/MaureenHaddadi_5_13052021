@@ -1,8 +1,12 @@
+@import "../utils/mixins";
 .photografer_list {
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  @include desktop {
+    justify-content: center;
+  }
 }
 
 .photografer_card {

@@ -1,5 +1,5 @@
 let photgraphersList = document.querySelector('.photografer_list')
-let tagsList = document.querySelector('.nav')
+let tagsList = document.querySelector('.navbar_tags')
 function getData() {
     return new Promise((resolve, reject) => {
         fetch('/assets/js/data.json')

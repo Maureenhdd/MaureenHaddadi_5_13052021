@@ -1,14 +1,30 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
 .navbar {
   padding: 20px;
   width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.nav {
-  display: flex;
-  flex-wrap: wrap;
+  &_img {
+    @include desktop {
+      align-self: flex-start;
+      width: 150px;
+    }
+  }
+  &_tags {
+    display: flex;
+    flex-wrap: wrap;
+    @include desktop {
+      justify-content: center;
+      margin-top: 35px;
+    }
+  }
+  @include desktop {
+    width: auto;
+    flex-direction: column;
+  }
 }
 
 .main_title {
@@ -18,4 +34,9 @@
   top: 5px;
   color: $primary-color;
   font-size: 36px;
+  @include desktop {
+    font-size: 18px;
+    right: 15px;
+    top: 25px;
+  }
 }

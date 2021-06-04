@@ -1,4 +1,6 @@
 @import "./../utils/variables";
+@import "../utils/mixins";
+
 .category_tag {
   padding: 5px;
   font-size: 12px;
@@ -9,6 +11,10 @@
   transition: 0.2s;
   text-decoration: none;
   margin-right: 5px;
+  @include desktop {
+    margin: 5px 3px;
+    padding: 8px;
+  }
 
   &:hover {
     background-color: $primary-color;
