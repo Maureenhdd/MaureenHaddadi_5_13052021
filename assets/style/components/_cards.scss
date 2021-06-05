@@ -1,5 +1,5 @@
 @import "../utils/mixins";
-.photografer_list {
+.photographer_list {
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
@@ -9,7 +9,7 @@
   }
 }
 
-.photografer_card {
+.photographer_card {
   width: 400px;
   display: flex;
   flex-direction: column;

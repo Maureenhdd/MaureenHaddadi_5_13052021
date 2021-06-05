@@ -1,4 +1,4 @@
-let photgraphersList = document.querySelector('.photografer_list')
+let photgraphersList = document.querySelector('.photographer_list')
 let tagsList = document.querySelector('.navbar_tags')
 function getData() {
     return new Promise((resolve, reject) => {
@@ -15,23 +15,39 @@ function getData() {
     })
 
 }
+class Photograph {
+    constructor(portrait, name, city, country, tagline, price, tags) {
+        this.portrait = portrait
+        this.name = name
+        this.city = city
+        this.country = country
+        this.tagline = tagline
+        this.price = price
+        this.tags = tags
+
+    }
+}
+
 
 getData().then((data) => {
     const photographers = data.photographers
     photographers.forEach(e => {
+        let photograph = new Photograph(e.portrait, e.name, e.city, e.country, e.tagline, e.price, e.tags)
+        state.photographs.push(photograph)
+        console.log(photograph)
         photgraphersList.innerHTML += `
-       <div class='photografer_card'>
-        <a class="photografer_card__link" href="#">
-            <img class='photografer_card__img' src="assets/img/${e.portrait}" alt='photo'> 
-            <h2 class="photografer_card__title">${e.name}</h2>
+       <div class='photographer_card'>
+        <a class="photographer_card__link" href="photographer.html">
+            <img class='photographer_card__img' src="assets/img/${photograph.portrait}" alt='photo'> 
+            <h2 class="photographer_card__title">${photograph.name}</h2>
         </a>
-        <p class="photografer_card__location">${e.city},${e.country}</p>
-        <p class="photografer_card__description">${e.tagline}</p>
-        <p class="photografer_card__price">${e.price}€/jour</p>
-        <div class="photografer_card__tags">
-        ${e.tags.map(tag =>
+        <p class="photographer_card__location">${photograph.city},${photograph.country}</p>
+        <p class="photographer_card__description">${photograph.tagline}</p>
+        <p class="photographer_card__price">${photograph.price}€/jour</p>
+        <div class="photographer_card__tags">
+        ${photograph.tags.map(tag =>
             `<a href="#" aria-label="tag" class="category_tag">#${tag}</a>`
-        ).join('')}       
+        ).join('')}
         </div>
         </div> `
     })
@@ -50,3 +66,8 @@ getData().then((data) => {
     })
 
 })
+
+const state = {
+    photographs: [],
+    media: []
+}
