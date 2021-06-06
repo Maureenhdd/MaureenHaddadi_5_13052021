@@ -30,9 +30,14 @@
   font-family: "DM Sans", sans-serif;
 }
 
+header,
+.main {
+  width: 90%;
+  margin: auto;
+}
+
 .navbar {
   padding: 20px;
-  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,6 +47,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.navbar--width {
+  width: 60%;
 }
 
 @media (max-width: 1024px) {
@@ -94,6 +103,37 @@
     right: 15px;
     top: 25px;
   }
+}
+
+.info_section {
+  width: 200px;
+  position: fixed;
+  bottom: 0;
+  right: 80px;
+  background-color: #db8876;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.info_section__i {
+  margin-left: 5px;
+}
+
+.info_section__likes {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info_section,
+.info_section__likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .photographer_list {
@@ -202,21 +242,44 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-top: 40px;
 }
 
 .photo_card {
-  width: 300px;
+  width: 350px;
+  margin-bottom: 50px;
 }
 
 .photo_card__img {
   width: 100%;
   height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.photo_card__text, .photo_card__likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #901c1c;
+  font-size: 20px;
+}
+
+.photo_card__number {
+  margin: 0 10px;
+}
+
+.photo_card__i {
+  margin: 3px 0;
+  cursor: pointer;
 }
 
 .photographer_banner {
-  width: 90%;
-  margin: auto;
   border-radius: 5px;
   background-color: #fafafa;
   padding: 50px;
@@ -295,5 +358,20 @@
   .photographer_banner__description {
     font-size: 13px;
   }
+}
+
+.filter_section {
+  padding-top: 50px;
+}
+
+.filter_section__select {
+  margin-left: 10px;
+  background-color: #901c1c;
+  padding: 10px;
+  color: white;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: solid 1px white;
 }
 /*# sourceMappingURL=main.css.map */

@@ -3,10 +3,12 @@
 
 .navbar {
   padding: 20px;
-  width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  &--width {
+    width: 60%;
+  }
   &_img {
     @include desktop {
       align-self: flex-start;

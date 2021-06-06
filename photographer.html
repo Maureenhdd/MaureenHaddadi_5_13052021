@@ -34,16 +34,65 @@
             </div>
             <img class='photographer_banner__img' src="assets/img/MimiKeel.jpg" alt='photo'>
         </section>
+        <section class="filter_section">
+            <label for="filter" class="filter_section__label">Trier par </label>
+            <select name="filter" id="filter" class="filter_section__select">
+                <option class="filter_section__option" value="Popularité">Popularité</option>
+                <option class="filter_section__option" value="Date">Date</option>
+                <option class="filter_section__option" value="Titre">Titre</option>
+            </select>
+        </section>
         <section class="photo_list">
-            <div class="photo_card">
+            <figure class="photo_card">
                 <img class='photo_card__img' src="assets/img/Animals_Rainbow.jpg" alt='photo'>
-                <p class='photo_card__title'>Arc-en-cie</p>
-                <div class="photo_card_likes">
-                    <p class='photo_card__nmbr'>12</p>
-                    <i class="fas fa-heart photo_card__i"></i>
+                <div class="photo_card__text">
+                    <figcaption class='photo_card__title'>Arc-en-cie</figcaption>
+                    <div class="photo_card__likes">
+                        <p class='photo_card__number'>12</p>
+                        <i class="fas fa-heart photo_card__i" aria-label="likes"></i>
+                    </div>
                 </div>
+            </figure>
+            <figure class="photo_card">
+                <img class='photo_card__img' src="assets/img/Portrait_Nora.jpg" alt='photo'>
+                <div class="photo_card__text">
+                    <figcaption class='photo_card__title'>Arc-en-cie</figcaption>
+                    <div class="photo_card__likes">
+                        <p class='photo_card__number'>12</p>
+                        <i class="fas fa-heart photo_card__i" aria-label="likes"></i>
+                    </div>
+                </div>
+            </figure>
+            <figure class="photo_card">
+                <img class='photo_card__img' src="assets/img/Travel_Lonesome.jpg" alt='photo'>
+                <div class="photo_card__text">
+                    <figcaption class='photo_card__title'>Arc-en-cie</figcaption>
+                    <div class="photo_card__likes">
+                        <p class='photo_card__number'>12</p>
+                        <i class="fas fa-heart photo_card__i" aria-label="likes"></i>
+                    </div>
+                </div>
+            </figure>
+            <figure class="photo_card">
+                <img class='photo_card__img' src="assets/img/Animals_Rainbow.jpg" alt='photo'>
+                <div class="photo_card__text">
+                    <figcaption class='photo_card__title'>Arc-en-cie</figcaption>
+                    <div class="photo_card__likes">
+                        <p class='photo_card__number'>12</p>
+                        <i class="fas fa-heart photo_card__i" aria-label="likes"></i>
+                    </div>
+                </div>
+            </figure>
+        </section>
 
+        <section class="info_section">
+            <div class="info_section__likes">
+                <p class='info_section__number'>297 000</p>
+                <i class="fas fa-heart info_section__i" aria-label="likes"></i>
             </div>
+            <p>
+                300€/jour
+            </p>
         </section>
     </main>
 </body>
