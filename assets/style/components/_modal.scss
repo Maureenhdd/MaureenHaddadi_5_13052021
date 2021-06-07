@@ -3,7 +3,7 @@
 
 .modal {
   background-color: rgba(0, 0, 0, 0.4);
-  //   display: none;
+  display: none;
   height: 100%;
   left: 0;
   overflow: auto;
@@ -13,9 +13,13 @@
   z-index: 1;
   &_content {
     background-color: $secondary-color;
-    width: 30%;
-    margin: 100px auto;
+    width: 35%;
+    margin: 50px auto;
     padding: 10px 20px;
+    @include desktop {
+      width: auto;
+      margin: 0;
+    }
     &__head {
       display: flex;
       justify-content: space-between;
@@ -24,6 +28,9 @@
     &__title {
       font-size: 50px;
       margin: 10px 0;
+      @include desktop {
+        font-size: 36px;
+      }
     }
     &__close {
       font-size: 50px;
@@ -44,6 +51,7 @@
   }
   &-label {
     font-size: 20px;
+    margin-bottom: 10px;
   }
   &-input {
     border: none;

@@ -1,5 +1,10 @@
 let photgraphersList = document.querySelector('.photographer_list')
 let tagsList = document.querySelector('.navbar_tags')
+const modal_contact = document.querySelector(".modal");
+const modal_btn = document.querySelector(".btn__contact")
+const closeModalIcon = document.querySelector(".modal_content__close")
+
+
 function getData() {
     return new Promise((resolve, reject) => {
         fetch('/assets/js/data.json')
@@ -70,4 +75,13 @@ getData().then((data) => {
 const state = {
     photographs: [],
     media: []
+}
+modal_btn.addEventListener("click", launchModal)
+function launchModal() {
+    modal_contact.style.display = "block";
+}
+
+closeModalIcon.addEventListener("click", closeModal)
+function closeModal() {
+    modal_contact.style.display = "none"
 }
