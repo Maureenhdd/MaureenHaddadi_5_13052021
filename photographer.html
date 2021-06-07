@@ -22,7 +22,10 @@
     <main class="main">
         <section class="photographer_banner">
             <div class="photographer_banner__content">
-                <h2 class="photographer_banner__title">Mimi Keel</h2>
+                <div class="photographer_banner__head">
+                    <h2 class="photographer_banner__title">Mimi Keel</h2>
+                    <button class="btn_contact">Contactez-moi</button>
+                </div>
                 <p class="photographer_banner__location">London, UK</p>
                 <p class="photographer_banner__description">Voir le beau dans le quotidien</p>
                 <div class="photographer_banner__tags">
@@ -31,6 +34,7 @@
                     <a href="#" aria-label="tag" class="category_tag">#event</a>
 
                 </div>
+
             </div>
             <img class='photographer_banner__img' src="assets/img/MimiKeel.jpg" alt='photo'>
         </section>
@@ -95,6 +99,35 @@
             </p>
         </section>
     </main>
+    <section id="modal" class="modal">
+        <div class="modal_content">
+            <div class="modal_content__head">
+                <h1 class="modal_content__title">Contactez-moi</h1>
+                <span class="modal_content__close">&times;</span>
+            </div>
+            <form class="modal_form">
+                <div class="form-field">
+                    <label for="first_name" class="form-label">Prénom</label>
+                    <input class="form-input" type="text" name="first_name" id="first_name" required />
+                </div>
+                <div class="form-field">
+                    <label for="last_name" class="form-label">Nom</label>
+                    <input class="form-input" type="text" name="last_name" id="last_name" required />
+                </div>
+                <div class="form-field">
+                    <label for="email" class="form-label">Email</label>
+                    <input class="form-input" type="text" name="email" id="email" required />
+                </div>
+                <div class="form-field">
+                    <label for="message" class="form-label">Votre message</label>
+                    <textarea class="form-input" type="text" name="message" id="message" rows="5" cols="33"
+                        required></textarea>
+                </div>
+
+                <input type="submit" class="btn_send">
+            </form>
+        </div>
+    </section>
 </body>
 
 </html>

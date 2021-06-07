@@ -12,6 +12,11 @@
     padding: 0;
     margin-top: 20px;
   }
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__img {
     width: 200px;
     height: 200px;
@@ -20,21 +25,21 @@
     box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.2);
     margin-right: 30px;
     @include desktop {
-      margin-right: 0;
-      width: 130px;
-      height: 130px;
+      margin-right: 10px;
+      width: 100px;
+      height: 100px;
     }
   }
 
   &__title {
     color: $primary-color1;
-    margin: 20px 0;
+    margin: 20px 0 10px 0;
     font-size: 64px;
     font-weight: normal;
     text-decoration: none;
     @include desktop {
       font-size: 36px;
-      margin: 0 0 5px 0;
+      margin: 0;
     }
   }
   &__location {
@@ -44,7 +49,7 @@
     margin: 2px 0 20px 0;
     @include desktop {
       font-size: 13px;
-      margin: 2px 0 10px 0;
+      margin: 1px 0 5px 0;
     }
   }
   &__description {

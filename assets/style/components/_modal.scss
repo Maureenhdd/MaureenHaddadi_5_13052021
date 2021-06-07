@@ -1,0 +1,53 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.4);
+  //   display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  &_content {
+    background-color: $secondary-color;
+    width: 30%;
+    margin: 100px auto;
+    padding: 10px 20px;
+    &__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__title {
+      font-size: 50px;
+      margin: 10px 0;
+    }
+    &__close {
+      font-size: 50px;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  &_form {
+    width: 100%;
+  }
+}
+
+.form {
+  &-field {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  &-label {
+    font-size: 20px;
+  }
+  &-input {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}

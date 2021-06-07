@@ -14,4 +14,7 @@
     border-left: none;
     border-bottom: solid 1px white;
   }
+  @include desktop {
+    display: none;
+  }
 }
