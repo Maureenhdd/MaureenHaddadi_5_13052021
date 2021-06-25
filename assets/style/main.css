@@ -517,6 +517,10 @@ header,
   width: 100%;
 }
 
+.title--name {
+  margin: 0;
+}
+
 .form-field {
   margin-top: 10px;
   display: -webkit-box;
