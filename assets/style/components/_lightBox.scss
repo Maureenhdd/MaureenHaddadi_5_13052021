@@ -1,0 +1,52 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.lightBox {
+  background-color: rgba(255, 255, 255, 0.842);
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  z-index: 1;
+  &_content {
+    width: 80%;
+    height: 500px;
+    margin: 50px auto;
+    padding: 10px 20px;
+    @include desktop {
+      width: 70%;
+    }
+    &__close {
+      font-size: 80px;
+      color: $primary-color;
+      cursor: pointer;
+      position: absolute;
+      right: 30px;
+    }
+    &__media {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      margin: auto;
+      border-radius: 5px;
+    }
+    &_controls {
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      &__i {
+        font-size: 50px;
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -12,6 +12,7 @@
 .photo_card {
   width: 350px;
   margin-bottom: 71px;
+  cursor: pointer;
   @include desktop {
     margin: 10px;
     width: 100%;
@@ -38,5 +39,11 @@
   &__i {
     margin: 3px 0;
     cursor: pointer;
+    transition: 0.2s;
   }
+}
+
+.--active {
+  color: rgb(255, 105, 105);
+  transform: scale(1.2);
 }

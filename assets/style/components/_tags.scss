@@ -15,9 +15,20 @@
     margin: 2px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $primary-color;
     box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
     color: white;
   }
+  &:active {
+    transform: scale(0.7);
+    // background-color: pink;
+  }
 }
+
+// &:active {
+//   background-color: $primary-color;
+//   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
+//   color: white;
+// }
