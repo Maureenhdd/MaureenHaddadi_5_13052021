@@ -6,12 +6,11 @@ let state = {
     media: []
 }
 
-Api.getData().then((data) => {
-    let photographers = data.photographers
-    photographers.forEach(e => {
+Api.getData().then(({ photographers, media }) => {
+    state.photographs = photographers.map(e => {
         let photograph = new Photograph(e)
-        state.photographs.push(photograph)
         photgraphersList.innerHTML += photograph.createCard
+        return photograph
     })
 
     let allTags = photographers.map(t => t.tags).flat()
@@ -19,14 +18,13 @@ Api.getData().then((data) => {
     allTags = [...new Set(allTags)]
     allTags.forEach(tag => {
         tagsList.innerHTML += `
-        <a href="#" aria-label="tag" class="nav_link category_tag" data-value=${tag}>#${tag}</a>
+        <a href="#" class="nav_link category_tag" data-value=${tag}>#${tag}</a>
         `
     })
 
     tagsList.querySelectorAll('.category_tag').forEach(t => {
         t.addEventListener('click', () => {
             const tagValue = t.getAttribute('data-value')
-            // t.classList.toggle('--active')
             if (tagValue === "all") {
                 photgraphersList.innerHTML = ''
                 photographers.forEach(e => {
@@ -44,6 +42,8 @@ Api.getData().then((data) => {
             }
         })
     })
-    state.media = data.media
+    state.media = media
     localStorage.setItem('state', JSON.stringify(state))
 })
+
+

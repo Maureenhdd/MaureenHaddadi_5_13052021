@@ -29,7 +29,7 @@ class Photograph {
         <p class="photographer_card__price">${this.price}€/jour</p>
         <div class="photographer_card__tags">
         ${this.tags.map(tag =>
-            `<a href="#" aria-label="tag" class="category_tag">#${tag}</a>`
+            `<span aria-label="tag" class="category_tag">#${tag}</span>`
         ).join('')}
         </div>
         </div> `

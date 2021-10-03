@@ -15,11 +15,11 @@
     <header role="header" class="navbar">
         <nav aria-label="navigation" aria-label="fisheye home page">
             <a href="index.html">
-                <img src="assets/img/logo.svg" alt="logo FishEye" class="navbar_img">
+                <img src="assets/img/logo.svg" alt="logo FishEye" class="navbar_img" aria-label="fisheye homepage">
             </a>
         </nav>
     </header>
-    <main class="main">
+    <main class="main" aria-hidden="false">
         <section class="photographer_banner">
 
         </section>
@@ -32,34 +32,36 @@
             </select>
         </section>
         <section class="photo_list"></section>
-        <div class="lightBox">
-            <span class="lightBox_content__close">&times;</span>
+        <div class="lightBox" role="dialog" tabindex="-1" aria-label="image closeup view">
+            <span class="lightBox_content__close" tabindex="0">&times;</span>
 
             <div class="lightBox_content">
 
             </div>
             <div class="lightBox_content_controls">
-                <span class="lightBox_content_controls__i prev">❮</span>
-                <span class="lightBox_content_controls__i next"> ❯</span>
+                <span class="lightBox_content_controls__i prev" role="button" aria-label="Previous image"
+                    tabindex="0">❮</span>
+                <span class="lightBox_content_controls__i next" role="button" aria-label="Next image" tabindex="0">
+                    ❯</span>
             </div>
 
         </div>
         <section class="info_section">
             <div class="info_section__likes">
                 <p class='info_section__number'></p>
-                <i class="fas fa-heart info_section__i" aria-label="likes"></i>
+                <span role="icon heart" class="fas fa-heart info_section__i" aria-label="likes"></span>
             </div>
             <p>
                 300€/jour
             </p>
         </section>
     </main>
-    <section id="modal" class="modal">
+    <section id="modal" class="modal" role="dialog" tabindex="-1" aria-hidden="true">
         <div class="modal_content">
             <div class="modal_content__head">
                 <h1 class="modal_content__title">Contactez-moi</h1>
 
-                <span class="modal_content__close">&times;</span>
+                <span class="modal_content__close" aria-label="close modal" role="button" tabindex="0">&times;</span>
             </div>
             <h1 class="modal_content__title title--name"></h1>
             <form class="modal_form">
@@ -73,25 +75,23 @@
                 </div>
                 <div class="form-field">
                     <label for="email" class="form-label">Email</label>
-                    <input class="form-input" type="text" name="email" id="email" required />
+                    <input class="form-input" type="email" name="email" id="email" required />
                 </div>
                 <div class="form-field">
                     <label for="message" class="form-label">Votre message</label>
-                    <textarea class="form-input" type="text" name="message" id="message" rows="5" cols="33"
-                        required></textarea>
+                    <textarea class="form-input" name="message" id="message" rows="5" cols="33" required></textarea>
                 </div>
-
-                <input type="submit" class="btn_primary btn__submit">
+                <input type="submit" class="btn_primary btn__submit" value="Envoyer">
             </form>
         </div>
     </section>
-
     <script type="text/javascript" src="assets/js/Api.js"></script>
     <script type="text/javascript" src="assets/js/Photograph.js"></script>
     <script type="text/javascript" src="assets/js/Media.js"></script>
+    <script type="text/javascript" src="assets/js/lightBox.js"></script>
     <script type="text/javascript" src="assets/js/photographer.js"></script>
     <script type="text/javascript" src="assets/js/modal.js"></script>
-    <script type="text/javascript" src="assets/js/lightBox.js"></script>
+
 
 
 </body>

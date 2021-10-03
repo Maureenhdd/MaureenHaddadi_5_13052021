@@ -15,19 +15,20 @@ photographer_banner.innerHTML = `
 <div class="photographer_banner__content">
 <div class="photographer_banner__head">
     <h2 class="photographer_banner__title">${photographerInfos.name}</h2>
-    <button class="btn_primary btn__contact">Contactez-moi</button>
+    <button class="btn_primary btn__contact" aria-label="contact me">Contactez-moi</button>
 </div>
 <p class="photographer_banner__location">${photographerInfos.city}, ${photographerInfos.country}</p>
 <p class="photographer_banner__description">${photographerInfos.tagline}</p>
 <div class="photographer_banner__tags">
-    <a href="#" aria-label="tag" class="category_tag">#portrait</a>
-    <a href="#" aria-label="tag" class="category_tag">#travel</a>
-    <a href="#" aria-label="tag" class="category_tag">#event</a>
+${photographerInfos.tags.map(tag =>
+    `<span aria-label="${tag}" class="category_tag">#${tag}</span>`
+).join('')}
 </div>
 </div>
 <img class='photographer_banner__img' src="assets/img/${photographerInfos.portrait}" alt='photo de ${photographerInfos.name}'>
+
 `
-// NAME IN MODAL 
+// DISPLAY NAME IN MODAL 
 const modal_content__title = document.querySelector('.title--name')
 modal_content__title.innerHTML = photographerInfos.name
 
@@ -39,10 +40,9 @@ const reducer = (acc, item) => {
     return acc + item.likes
 }
 
-array_medias = array_medias.map(e => {
-    return MediaFactory.generateMedia(e, photographerInfos)
+array_medias = array_medias.map(e => MediaFactory.generateMedia(e, photographerInfos))
 
-})
+
 // GET TOTAL LIKES
 
 let totalLikes = array_medias.reduce(reducer, 0)
@@ -66,9 +66,6 @@ function prepareOnclickIcon() {
                 likeCoundDom.innerHTML = currentLike + 1
                 i.setAttribute('data-clicked', 'true')
                 info_section__number.innerHTML = currentTotalLike + 1
-
-
-
             }
         })
     })
@@ -78,16 +75,16 @@ function prepareOnclickIcon() {
 // filter 
 let inputFilter = document.querySelector('.filter_section__select')
 inputFilter.querySelectorAll('.filter_section__option').forEach(option => {
-    option.addEventListener('click', (e) => {
+    option.addEventListener('click', ({ target: { value } }) => {
         let arTmp = [...array_medias]
-        if (e.target.value === "Popularité") {
+        if (value === "Popularité") {
             arTmp.sort((a, b) => b.likes - a.likes)
         }
-        if (e.target.value == "Date") {
+        if (value == "Date") {
             arTmp.sort((a, b) => new Date(b.date) - new Date(a.date)
             )
         }
-        if (e.target.value == "Titre") {
+        if (value == "Titre") {
             arTmp.sort((a, b) =>
                 a.title.localeCompare(b.title)
             )
@@ -100,71 +97,9 @@ inputFilter.querySelectorAll('.filter_section__option').forEach(option => {
 })
 
 inputFilter.addEventListener('change', function (e) {
-    console.log(e.target.value)
     this.querySelector(`.filter_section__option[value=${e.target.value}]`).click()
 })
 
 inputFilter.querySelector('.filter_section__option').click()
 
-// lightbox
 
-const lightBox = document.querySelector('.lightBox')
-const closeLightBoxIcon = document.querySelector(".lightBox_content__close")
-var activeIndex = 0
-closeLightBoxIcon.addEventListener("click", closeLightBox)
-function closeLightBox() {
-    lightBox.style.display = "none"
-
-}
-
-function contentLightBox(e) {
-    if (e.tagName == "VIDEO") {
-        const src = e.getElementsByTagName("source")[0].src
-
-        lightBox.querySelector('.lightBox_content').innerHTML = `
-        <video controls autoplay class='lightBox_content__media'>
-        <source src="${src}"  type="video/mp4">
-        </video>
-        
-        `
-
-    } else {
-        lightBox.querySelector('.lightBox_content').innerHTML = `         
-        <img class='lightBox_content__media' src="${e.src}" alt='photo'>
-        `
-    }
-    // e.classList.remove('photo_card__img')
-    // e.classList.add('lightBox_content__media')
-    // e.style.height = '500px'
-    // lightBox.querySelector('.lightBox_content').innerHTML = e.outerHTML
-
-}
-function openLightBox() {
-    photo_list.querySelectorAll('.photo_card__img').forEach((e, index, array_photo) => {
-        e.addEventListener('click', function () {
-            lightBox.style.display = "block"
-            activeIndex = index
-            contentLightBox(array_photo[activeIndex])
-        })
-    })
-}
-
-document.addEventListener('keydown', (e) => {
-    e.preventDefault()
-    if (e.code === "ArrowRight") {
-        document.querySelector('.next').click()
-    } else if (e.code === "ArrowLeft") {
-        document.querySelector('.prev').click()
-    }
-})
-
-document.querySelector('.next').addEventListener('click', () => {
-    activeIndex = (activeIndex + 1) % photo_list.querySelectorAll('.photo_card__img').length
-    contentLightBox(photo_list.querySelectorAll('.photo_card__img')[activeIndex])
-
-})
-
-document.querySelector('.prev').addEventListener('click', () => {
-    activeIndex = 0 > activeIndex - 1 ? photo_list.querySelectorAll('.photo_card__img').length - 1 : activeIndex - 1
-    contentLightBox(photo_list.querySelectorAll('.photo_card__img')[activeIndex])
-})
