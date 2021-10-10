@@ -20,13 +20,13 @@ function displayContent(e) {
         <video controls autoplay class='lightBox_content__media'>
         <source src="${src}"  type="video/mp4">
         </video>
-        <p>${title}</p>
+        <p class='lightBox_content__title'>${title}</p>
         `
     } else {
         const alt = e.getAttribute('alt')
         lightBox.querySelector('.lightBox_content').innerHTML = `         
         <img class='lightBox_content__media' src="${e.src}" alt="${alt}">
-        <p>${title}</p>
+        <p class='lightBox_content__title'>${title}</p>
         `
     }
 }
@@ -57,14 +57,11 @@ document.querySelector('.prev').addEventListener('click', () => {
     displayContent(photo_list.querySelectorAll('.photo_card__img')[activeIndex])
 })
 
-
-
-
 document.addEventListener('keydown', (e) => {
     if (e.code === "Enter") {
         document.activeElement.click()
     }
-    if (e.code === "Space") {
+    if (e.code === "Space" || e.code === "Escape") {
         e.preventDefault()
         closeLightBox()
     } else if (e.code === "ArrowRight") {

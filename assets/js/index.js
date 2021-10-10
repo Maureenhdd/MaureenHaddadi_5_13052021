@@ -18,7 +18,7 @@ Api.getData().then(({ photographers, media }) => {
     allTags = [...new Set(allTags)]
     allTags.forEach(tag => {
         tagsList.innerHTML += `
-        <a href="#" class="nav_link category_tag" data-value=${tag}>#${tag}</a>
+        <button class="nav_link category_tag" data-value=${tag} aria-label=${tag}>#${tag}</button>
         `
     })
 
@@ -40,6 +40,12 @@ Api.getData().then(({ photographers, media }) => {
                     photgraphersList.innerHTML += photograph.createCard
                 })
             }
+            let target = document.querySelector('.category_tag--active')
+            if (target) {
+                target.classList.remove('category_tag--active')
+            }
+            t.classList.add('category_tag--active')
+
         })
     })
     state.media = media

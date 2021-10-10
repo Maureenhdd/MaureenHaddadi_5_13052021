@@ -14,10 +14,14 @@
 <body>
     <header role="header" class="navbar">
         <nav aria-label="navigation" aria-label="fisheye home page">
+
             <a href="index.html">
                 <img src="assets/img/logo.svg" alt="logo FishEye" class="navbar_img" aria-label="fisheye homepage">
             </a>
+            <a class="skip-link" href="#gallery_section">Passer au contenu</a>
+
         </nav>
+
     </header>
     <main class="main" aria-hidden="false">
         <section class="photographer_banner">
@@ -31,7 +35,7 @@
                 <option class="filter_section__option" value="Titre">Titre</option>
             </select>
         </section>
-        <section class="photo_list"></section>
+        <section class="photo_list" id="gallery_section"></section>
         <div class="lightBox" role="dialog" tabindex="-1" aria-label="image closeup view">
             <span class="lightBox_content__close" tabindex="0">&times;</span>
 

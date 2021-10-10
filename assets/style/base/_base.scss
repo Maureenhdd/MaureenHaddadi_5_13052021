@@ -11,3 +11,18 @@
     width: 100%;
   }
 }
+
+.skip-link {
+  transition: transform 0.3s;
+  background: $secondary-color;
+  color: black;
+  font-weight: 700;
+  left: 50%;
+  padding: 5px;
+  position: absolute;
+  transform: translateY(-100px);
+  text-decoration: none;
+  &:focus {
+    transform: translateY(-35px);
+  }
+}

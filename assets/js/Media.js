@@ -9,13 +9,6 @@ class MediaFactory {
             return "Unknown Type"
         }
     }
-    static generateMediaLightbox(data) {
-        if (data.tagName == "VIDEO") {
-            return new VideoLightbox(data)
-        } else {
-            return new PhotoLightbox(data)
-        }
-    }
 }
 
 class Photo {
@@ -34,7 +27,6 @@ class Photo {
     }
 
     createElement() {
-        console.log(this.alt)
         return `
         <figure class="photo_card" data-id=${this.id} tabindex="-1" >
          <img class='photo_card__img' src="assets/img/medias/${this.photographerName.split(' ')[0]}/${this.image}" alt="${this.alt}" tabindex="0" data-title='${this.title}'>
@@ -43,7 +35,7 @@ class Photo {
                 <figcaption class='photo_card__title'>${this.title}</figcaption>
                 <div class="photo_card__likes">
                     <p class='photo_card__number' >${this.likes}</p>
-                    <span class="fas fa-heart photo_card__i" aria-label="likes" data-clicked="false" role="button"></span>
+                    <span class="fas fa-heart photo_card__i" aria-label="Ajouter un j'aime" data-clicked="false" role="button" tabindex=0></span>
                 </div>
             </div>
         </figure>`
@@ -75,42 +67,9 @@ class Video {
                 <figcaption class='photo_card__title'>${this.title}</figcaption>
                 <div class="photo_card__likes">
                     <p class='photo_card__number'>${this.likes}</p>
-                    <span class="fas fa-heart photo_card__i" aria-label="likes" data-clicked="false" role="button"></span>
+                    <span class="fas fa-heart photo_card__i" aria-label="likes" data-clicked="false" role="button" tabindex=0></span>
                 </div>
             </div>
         </figure>`
-    }
-}
-
-
-class PhotoLightbox {
-    constructor(data) {
-        this.id = data.id
-        this.photographerId = data.photographerId
-        this.title = data.title
-        this.image = data.image
-    }
-
-    createElement() {
-        return `
-        <img class='lightBox_content__media' src="assets/img/medias/${this.photographerName.split(' ')[0]}/${this.image}" alt="${this.alt}">
-        <p>${this.title}</p>`
-    }
-}
-
-class VideoLightbox {
-    constructor(data) {
-        this.id = data.id
-        this.photographerId = data.photographerId
-        this.title = data.title
-        this.video = data.video
-    }
-
-    createElement() {
-        return `
-        <video controls autoplay class='lightBox_content__media'>
-        <source src="assets/img/medias/${this.photographerName.split(' ')[0]}/${this.video}"  type="video/mp4">
-        </video>
-        <p>${this.title}</p>`
     }
 }

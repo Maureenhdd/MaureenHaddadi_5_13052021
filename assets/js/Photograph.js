@@ -12,7 +12,6 @@ class Photograph {
     }
 
     static getMedia(storage, id) {
-        console.log(storage)
         const result = storage.media.filter(e => e.photographerId == id)
         return result
     }

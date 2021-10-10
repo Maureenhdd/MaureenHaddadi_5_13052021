@@ -6,6 +6,7 @@
           box-sizing: border-box;
   border-radius: 100px;
   color: #901c1c;
+  background-color: white;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   text-decoration: none;
@@ -18,7 +19,7 @@
   }
 }
 
-.category_tag:hover, .category_tag:focus {
+.category_tag:hover, .category_tag:focus, .category_tag--active {
   background-color: #901c1c;
   -webkit-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
@@ -43,6 +44,27 @@
   .main {
     width: 100%;
   }
+}
+
+.skip-link {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  background: #db8876;
+  color: black;
+  font-weight: 700;
+  left: 50%;
+  padding: 5px;
+  position: absolute;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  -webkit-transform: translateY(-35px);
+          transform: translateY(-35px);
 }
 
 .navbar {
@@ -598,6 +620,12 @@
      object-fit: contain;
   margin: auto;
   border-radius: 5px;
+}
+
+.lightBox_content__title {
+  color: #901c1c;
+  text-align: center;
+  font-size: 25px;
 }
 
 .lightBox_content_controls {
