@@ -20,7 +20,7 @@ class Photograph {
         return `
        <div class='photographer_card'>
         <a class="photographer_card__link" href="photographer.html?id=${this.id}">
-            <img class='photographer_card__img' src="assets/img/${this.portrait}" alt='photo'> 
+            <img class='photographer_card__img' src="assets/img/${this.portrait}" alt='photo de ${this.name}'> 
             <h2 class="photographer_card__title">${this.name}</h2>
         </a>
         <p class="photographer_card__location">${this.city},${this.country}</p>
