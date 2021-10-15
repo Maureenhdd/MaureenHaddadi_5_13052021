@@ -18,7 +18,7 @@ Api.getData().then(({ photographers, media }) => {
     allTags = [...new Set(allTags)]
     allTags.forEach(tag => {
         tagsList.innerHTML += `
-        <button class="nav_link category_tag" data-value=${tag} aria-label=${tag}>#${tag}</button>
+        <button class="nav_link category_tag" data-value=${tag} aria-label='filtrer les photographes en rapport à ${tag}'>#${tag}</button>
         `
     })
 
@@ -49,6 +49,7 @@ Api.getData().then(({ photographers, media }) => {
         })
     })
     state.media = media
+    console.log(state)
     localStorage.setItem('state', JSON.stringify(state))
 })
 

@@ -9,6 +9,7 @@ function closeLightBox() {
     lightBox.style.display = "none"
     lightBox.setAttribute('aria-hidden', 'true')
     main.setAttribute('aria-hidden', 'false')
+    lightBox.setAttribute('tabindex', '-1')
 
 }
 
@@ -25,11 +26,12 @@ function displayContent(e) {
     } else {
         const alt = e.getAttribute('alt')
         lightBox.querySelector('.lightBox_content').innerHTML = `         
-        <img class='lightBox_content__media' src="${e.src}" alt="${alt}">
+        <img class='lightBox_content__media' src="${e.src}" alt="${alt}" tabindex=0>
         <p class='lightBox_content__title'>${title}</p>
         `
     }
 }
+
 
 
 function openLightBox() {
@@ -40,10 +42,13 @@ function openLightBox() {
             displayContent(array_photo[activeIndex])
             lightBox.setAttribute('aria-hidden', 'false')
             lightBox.focus()
+            lightBox.setAttribute('tabindex', '0')
             main.setAttribute('aria-hidden', 'true')
+            main.setAttribute('tabindex', '-1')
         })
     })
 }
+
 
 
 document.querySelector('.next').addEventListener('click', () => {
@@ -56,6 +61,7 @@ document.querySelector('.prev').addEventListener('click', () => {
     activeIndex = 0 > activeIndex - 1 ? photo_list.querySelectorAll('.photo_card__img').length - 1 : activeIndex - 1
     displayContent(photo_list.querySelectorAll('.photo_card__img')[activeIndex])
 })
+
 
 document.addEventListener('keydown', (e) => {
     if (e.code === "Enter") {

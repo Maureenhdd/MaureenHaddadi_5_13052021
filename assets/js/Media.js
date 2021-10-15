@@ -35,7 +35,7 @@ class Photo {
                 <figcaption class='photo_card__title'>${this.title}</figcaption>
                 <div class="photo_card__likes">
                     <p class='photo_card__number' >${this.likes}</p>
-                    <span class="fas fa-heart photo_card__i" aria-label="Ajouter un j'aime" data-clicked="false" role="button" tabindex=0></span>
+                    <span class="fas fa-heart photo_card__i" aria-label='ajouter un like à la photo' data-clicked="false" role="button" tabindex=0></span>
                 </div>
             </div>
         </figure>`
@@ -53,6 +53,8 @@ class Video {
         this.date = data.date
         this.price = data.price
         this.photographerName = photograph.name
+        this.alt = data.description
+
 
     }
 
@@ -60,14 +62,14 @@ class Video {
         return `
         <figure class="photo_card" data-id=${this.id}
          tabindex="-1">
-        <video class='photo_card__img'  data-title='${this.title}' tabindex=0>
+        <video class='photo_card__img'  data-title='${this.title}' title='${this.alt}' tabindex=0>
         <source src="assets/img/medias/${this.photographerName.split(' ')[0]}/${this.video}"  type="video/mp4" >
         </video>
             <div class="photo_card__text">
                 <figcaption class='photo_card__title'>${this.title}</figcaption>
                 <div class="photo_card__likes">
                     <p class='photo_card__number'>${this.likes}</p>
-                    <span class="fas fa-heart photo_card__i" aria-label="likes" data-clicked="false" role="button" tabindex=0></span>
+                    <span class="fas fa-heart photo_card__i" aria-label='ajouter un like à la video' data-clicked="false" role="button" tabindex=0></span>
                 </div>
             </div>
         </figure>`

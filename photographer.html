@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header role="header" class="navbar">
+    <header role="oui" class="navbar">
         <nav role="navigation" aria-label="fisheye home page">
 
             <a href="index.html">
@@ -37,27 +37,20 @@
         </section>
         <section class="photo_list" id="gallery_section"></section>
         <div class="lightBox" role="dialog" tabindex="-1" aria-label="image closeup view">
-            <span class="lightBox_content__close" tabindex="0">&times;</span>
-
+            <span class="lightBox_content__close" tabindex="0" aria-label="fermer la modal">&times;</span>
             <div class="lightBox_content">
-
             </div>
             <div class="lightBox_content_controls">
-                <span class="lightBox_content_controls__i prev" role="button" aria-label="Previous image"
-                    tabindex="0">❮</span>
-                <span class="lightBox_content_controls__i next" role="button" aria-label="Next image" tabindex="0">
+                <span class="lightBox_content_controls__i prev" role="button" aria-label="Aller à l'image précédente"
+                    tabindex="0" role="button">❮</span>
+                <span class="lightBox_content_controls__i next" role="button" aria-label="Aller à l'image précédente"
+                    tabindex="0" role="button">
                     ❯</span>
             </div>
 
         </div>
         <section class="info_section">
-            <div class="info_section__likes">
-                <p class='info_section__number'></p>
-                <span role="icon heart" class="fas fa-heart info_section__i" aria-label="likes"></span>
-            </div>
-            <p>
-                300€/jour
-            </p>
+
         </section>
     </main>
     <section id="modal" class="modal" role="dialog" tabindex="-1" aria-hidden="true">
@@ -89,12 +82,12 @@
             </form>
         </div>
     </section>
-    <script type="text/javascript" src="assets/js/Api.js"></script>
-    <script type="text/javascript" src="assets/js/Photograph.js"></script>
-    <script type="text/javascript" src="assets/js/Media.js"></script>
-    <script type="text/javascript" src="assets/js/lightBox.js"></script>
-    <script type="text/javascript" src="assets/js/photographer.js"></script>
-    <script type="text/javascript" src="assets/js/modal.js"></script>
+    <script src="assets/js/Api.js"></script>
+    <script src="assets/js/Photograph.js"></script>
+    <script src="assets/js/Media.js"></script>
+    <script src="assets/js/lightBox.js"></script>
+    <script src="assets/js/photographer.js"></script>
+    <script src="assets/js/modal.js"></script>
 
 
 

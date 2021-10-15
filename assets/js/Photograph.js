@@ -19,7 +19,7 @@ class Photograph {
     get createCard() {
         return `
        <div class='photographer_card'>
-        <a class="photographer_card__link" href="photographer.html?id=${this.id}">
+        <a class="photographer_card__link" href="photographer.html?id=${this.id}" aria-label="aller à la galerie de ${this.name}, habitant à ${this.city},${this.country}, son tarif est de ${this.price}€ par jour. ${this.name} est spécialisé dans ${this.tags}. Sa devise est ${this.tagline}">
             <img class='photographer_card__img' src="assets/img/${this.portrait}" alt='photo de ${this.name}'> 
             <h2 class="photographer_card__title">${this.name}</h2>
         </a>
