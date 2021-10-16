@@ -67,6 +67,12 @@
           transform: translateY(-35px);
 }
 
+@media (max-width: 768px) {
+  .skip-link {
+    display: none;
+  }
+}
+
 .navbar {
   padding: 20px;
   display: -webkit-box;
@@ -602,6 +608,7 @@
 @media (max-width: 1024px) {
   .lightBox_content {
     width: 70%;
+    margin: 150px auto auto auto;
   }
 }
 

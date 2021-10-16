@@ -30,27 +30,27 @@
         <section class="filter_section">
             <label for="filter" class="filter_section__label">Trier par </label>
             <select name="filter" id="filter" class="filter_section__select">
-                <option class="filter_section__option" value="Popularité">Popularité</option>
                 <option class="filter_section__option" value="Date">Date</option>
+                <option class="filter_section__option" value="Popularité">Popularité</option>
+
                 <option class="filter_section__option" value="Titre">Titre</option>
             </select>
         </section>
         <section class="photo_list" id="gallery_section"></section>
-        <div class="lightBox" role="dialog" tabindex="-1" aria-label="image closeup view">
+        <div class="lightBox" role="dialog" tabindex="-1" aria-label="gallerie photo" aria-hidden="true">
             <span class="lightBox_content__close" tabindex="0" aria-label="fermer la modal">&times;</span>
             <div class="lightBox_content">
             </div>
             <div class="lightBox_content_controls">
                 <span class="lightBox_content_controls__i prev" role="button" aria-label="Aller à l'image précédente"
                     tabindex="0" role="button">❮</span>
-                <span class="lightBox_content_controls__i next" role="button" aria-label="Aller à l'image précédente"
+                <span class="lightBox_content_controls__i next" role="button" aria-label="Aller à l'image suivante"
                     tabindex="0" role="button">
                     ❯</span>
             </div>
 
         </div>
         <section class="info_section">
-
         </section>
     </main>
     <section id="modal" class="modal" role="dialog" tabindex="-1" aria-hidden="true">
@@ -58,7 +58,8 @@
             <div class="modal_content__head">
                 <h1 class="modal_content__title">Contactez-moi</h1>
 
-                <span class="modal_content__close" aria-label="close modal" role="button" tabindex="0">&times;</span>
+                <span class="modal_content__close" aria-label="fermer le formulaire de contact" role="button"
+                    tabindex="0">&times;</span>
             </div>
             <h1 class="modal_content__title title--name"></h1>
             <form class="modal_form">

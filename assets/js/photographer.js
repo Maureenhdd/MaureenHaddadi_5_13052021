@@ -35,7 +35,6 @@ modal_content__title.innerHTML = photographerInfos.name
 // MEDIAS INFOS
 let array_medias = Photograph.getMedia(storage, getId)
 const photo_list = document.querySelector('.photo_list');
-const info_section__number = document.querySelector('.info_section__number')
 const info_section = document.querySelector('.info_section')
 const reducer = (acc, item) => {
     return acc + item.likes
@@ -59,6 +58,9 @@ ${photographerInfos.price}€/jour
 </p> 
 
 `
+const info_section__number = document.querySelector('.info_section__number')
+
+// put click event on each icon , if clicked add 1 in like and in total like 
 function prepareOnclickIcon() {
     const heartI = document.querySelectorAll('.photo_card__i')
     heartI.forEach(i => {
@@ -89,6 +91,7 @@ function prepareOnclickIcon() {
 // filter 
 let inputFilter = document.querySelector('.filter_section__select')
 inputFilter.querySelectorAll('.filter_section__option').forEach(option => {
+    // ajoute click a chaque option 
     option.addEventListener('click', ({ target: { value } }) => {
         let arTmp = [...array_medias]
         if (value === "Popularité") {
@@ -110,10 +113,11 @@ inputFilter.querySelectorAll('.filter_section__option').forEach(option => {
 
 })
 
+// simuler click quand je selectionne une valeur pour pouvoir changer la section 
 inputFilter.addEventListener('change', function (e) {
     this.querySelector(`.filter_section__option[value=${e.target.value}]`).click()
 })
-
+// simuler click au pour la première value
 inputFilter.querySelector('.filter_section__option').click()
 
 

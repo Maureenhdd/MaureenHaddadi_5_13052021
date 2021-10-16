@@ -54,7 +54,6 @@ function openLightBox() {
 document.querySelector('.next').addEventListener('click', () => {
     activeIndex = (activeIndex + 1) % photo_list.querySelectorAll('.photo_card__img').length
     displayContent(photo_list.querySelectorAll('.photo_card__img')[activeIndex])
-
 })
 
 document.querySelector('.prev').addEventListener('click', () => {
@@ -63,7 +62,7 @@ document.querySelector('.prev').addEventListener('click', () => {
 })
 
 
-document.addEventListener('keydown', (e) => {
+lightBox.addEventListener('keydown', (e) => {
     if (e.code === "Enter") {
         document.activeElement.click()
     }

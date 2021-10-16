@@ -10,7 +10,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-
   z-index: 1;
   &_content {
     width: 80%;
@@ -19,6 +18,7 @@
     padding: 10px 20px;
     @include desktop {
       width: 70%;
+      margin: 150px auto auto auto;
     }
     &__close {
       font-size: 80px;

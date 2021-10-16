@@ -9,7 +9,7 @@ let state = {
 Api.getData().then(({ photographers, media }) => {
     state.photographs = photographers.map(e => {
         let photograph = new Photograph(e)
-        photgraphersList.innerHTML += photograph.createCard
+        photgraphersList.innerHTML += photograph.createCard()
         return photograph
     })
 
@@ -30,14 +30,14 @@ Api.getData().then(({ photographers, media }) => {
                 photographers.forEach(e => {
                     let photograph = new Photograph(e)
                     state.photographs.push(photograph)
-                    photgraphersList.innerHTML += photograph.createCard
+                    photgraphersList.innerHTML += photograph.createCard()
                 })
             } else {
                 const filtered = photographers.filter((photographer) => photographer.tags.includes(tagValue))
                 photgraphersList.innerHTML = ''
                 filtered.forEach(e => {
                     let photograph = new Photograph(e)
-                    photgraphersList.innerHTML += photograph.createCard
+                    photgraphersList.innerHTML += photograph.createCard()
                 })
             }
             let target = document.querySelector('.category_tag--active')
@@ -49,7 +49,6 @@ Api.getData().then(({ photographers, media }) => {
         })
     })
     state.media = media
-    console.log(state)
     localStorage.setItem('state', JSON.stringify(state))
 })
 
