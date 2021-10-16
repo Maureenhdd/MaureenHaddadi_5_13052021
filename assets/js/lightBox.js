@@ -62,9 +62,10 @@ document.querySelector('.prev').addEventListener('click', () => {
 })
 
 
-lightBox.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', (e) => {
     if (e.code === "Enter") {
         document.activeElement.click()
+
     }
     if (e.code === "Space" || e.code === "Escape") {
         e.preventDefault()
