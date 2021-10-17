@@ -465,6 +465,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 120px;
 }
 
 .filter_section__wrapper {
@@ -483,9 +484,16 @@
           box-sizing: border-box;
   cursor: pointer;
   margin-left: 20px;
+  border-radius: 5px;
+  width: 120px;
+}
+
+.filter_section__wrapper--active_border {
+  border-radius: 5px 5px 0 0;
 }
 
 .filter_section__wrapper__list {
+  width: 120px;
   -webkit-transform: scale(0);
           transform: scale(0);
   position: absolute;
@@ -496,6 +504,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   z-index: 10;
+  border-radius: 0 0 5px 5px;
 }
 
 .filter_section__wrapper__list--active {
@@ -511,6 +520,8 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  text-align: left;
+  font-size: 16px;
 }
 
 .filter_section__wrapper__list__option:not(:last-child) {
@@ -519,10 +530,6 @@
 
 .filter_section__wrapper__list__option:hover {
   background-color: #fff6;
-}
-
-.filter_section__wrapper__list__option--clicked {
-  display: none;
 }
 
 @media (max-width: 1024px) {

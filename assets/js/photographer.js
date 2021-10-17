@@ -99,7 +99,9 @@ let openListI = document.querySelector('.open_list__i')
 
 inputFilterTop.addEventListener('click', () => {
     inputFilterList.classList.toggle('filter_section__wrapper__list--active')
+    inputFilter.classList.toggle('filter_section__wrapper--active_border')
     openListI.classList.toggle('open_list__i--active')
+
     document.querySelectorAll('.filter_section__wrapper__list__option').forEach(i => {
         i.setAttribute('tabindex', '0')
     })
@@ -108,9 +110,15 @@ inputFilterTop.addEventListener('click', () => {
 inputFilterIndicator.addEventListener('blur', () => {
     inputFilterList.classList.remove('filter_section__wrapper__list--active')
 })
+
+inputFilter.querySelector('.filter_section__wrapper__list__option:last-child').addEventListener('blur', () => {
+    inputFilter.classList.remove('filter_section__wrapper--active_border')
+    openListI.classList.remove('open_list__i--active')
+})
 inputFilter.querySelectorAll('.filter_section__wrapper__list__option').forEach(option => {
     option.addEventListener('focus', () => {
         inputFilterList.classList.add('filter_section__wrapper__list--active')
+
     })
     option.addEventListener('blur', () => {
         inputFilterList.classList.remove('filter_section__wrapper__list--active')
@@ -134,9 +142,8 @@ inputFilter.querySelectorAll('.filter_section__wrapper__list__option').forEach(o
         photo_list.innerHTML = arTmp.map(e => e.createElement()).join('')
         inputFilterIndicator.innerText = optValue
         inputFilterList.classList.remove('filter_section__wrapper__list--active')
-        openListI.classList.toggle('open_list__i--active')
-
-
+        openListI.classList.remove('open_list__i--active')
+        inputFilter.classList.remove('filter_section__wrapper--active_border')
         openLightBox()
         prepareOnclickIcon()
     })

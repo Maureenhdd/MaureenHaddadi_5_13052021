@@ -28,26 +28,21 @@
 
         </section>
         <section class="filter_section">
-            <!-- <label for="filter" class="filter_section__label">Trier par </label>
-            <select name="filter" id="filter" class="filter_section__select">
-                <option class="filter_section__option" value="Date">Date</option>
-                <option class="filter_section__option" value="Popularité">Popularité</option>
-                <option class="filter_section__option" value="Titre">Titre</option>
-            </select> -->
-            <p aria-label="trier par" class="filter_section__label" tabindex="0">Trier par </p>
+            <p aria-label="trier par" class="filter_section__label">Trier par </p>
             <div class="filter_section__wrapper">
                 <div class="filter_section__top">
-                    <div class="filter_section__wrapper__indicator" tabindex="0">Date
+                    <div class="filter_section__wrapper__indicator" tabindex="0" aria-labelledby="Trier par"
+                        role="button" aria-label="trier par Date" aria-expanded="false" aria-haspopup="listbox">Date
                     </div>
-                    <i class="fas fa-chevron-down open_list__i "></i>
+                    <span class="fas fa-chevron-down open_list__i " role="icon"></span>
                 </div>
 
-                <div role="filter" id="filter" class="filter_section__wrapper__list">
-                    <button class="filter_section__wrapper__list__option" aria-label="Sélectionner Date"
+                <div role="filter" class="filter_section__wrapper__list">
+                    <button class="filter_section__wrapper__list__option" aria-label="Trier par Date , 1 sur 3"
                         data-value="Date" tabindex="-1">Date</button>
-                    <button class="filter_section__wrapper__list__option" aria-label="Sélectionner Popularité"
+                    <button class="filter_section__wrapper__list__option" aria-label="Trier par Popularité, 2 sur 3"
                         data-value="Popularité" tabindex="-1">Popularité</button>
-                    <button class="filter_section__wrapper__list__option" aria-label="Sélectionner Titre"
+                    <button class="filter_section__wrapper__list__option" aria-label="Trier par Titre, 3 sur 3"
                         data-value="Titre" tabindex="-1">Titre</button>
                 </div>
             </div>

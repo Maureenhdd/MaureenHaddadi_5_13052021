@@ -9,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 120px;
   }
 
   &__wrapper {
@@ -22,8 +23,15 @@
     box-sizing: border-box;
     cursor: pointer;
     margin-left: 20px;
+    border-radius: 5px;
+    width: 120px;
+
+    &--active_border {
+      border-radius: 5px 5px 0 0;
+    }
 
     &__list {
+      width: 120px;
       transform: scale(0);
       position: absolute;
       top: 40px;
@@ -32,6 +40,7 @@
       background-color: $primary-color;
       box-sizing: border-box;
       z-index: 10;
+      border-radius: 0 0 5px 5px;
       &--active {
         transform: scale(1);
       }
@@ -43,14 +52,13 @@
         background-color: transparent;
         border: none;
         cursor: pointer;
+        text-align: left;
+        font-size: 16px;
         &:not(:last-child) {
           border-bottom: 1px #fff solid;
         }
         &:hover {
           background-color: #fff6;
-        }
-        &--clicked {
-          display: none;
         }
       }
     }
