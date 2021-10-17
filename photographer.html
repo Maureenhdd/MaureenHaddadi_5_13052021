@@ -28,13 +28,30 @@
 
         </section>
         <section class="filter_section">
-            <label for="filter" class="filter_section__label">Trier par </label>
+            <!-- <label for="filter" class="filter_section__label">Trier par </label>
             <select name="filter" id="filter" class="filter_section__select">
                 <option class="filter_section__option" value="Date">Date</option>
                 <option class="filter_section__option" value="Popularité">Popularité</option>
-
                 <option class="filter_section__option" value="Titre">Titre</option>
-            </select>
+            </select> -->
+            <p aria-label="trier par" class="filter_section__label" tabindex="0">Trier par </p>
+            <div class="filter_section__wrapper">
+                <div class="filter_section__top">
+                    <div class="filter_section__wrapper__indicator" tabindex="0">Date
+                    </div>
+                    <i class="fas fa-chevron-down open_list__i "></i>
+                </div>
+
+                <div role="filter" id="filter" class="filter_section__wrapper__list">
+                    <button class="filter_section__wrapper__list__option" aria-label="Sélectionner Date"
+                        data-value="Date" tabindex="-1">Date</button>
+                    <button class="filter_section__wrapper__list__option" aria-label="Sélectionner Popularité"
+                        data-value="Popularité" tabindex="-1">Popularité</button>
+                    <button class="filter_section__wrapper__list__option" aria-label="Sélectionner Titre"
+                        data-value="Titre" tabindex="-1">Titre</button>
+                </div>
+            </div>
+
         </section>
         <section class="photo_list" id="gallery_section"></section>
         <div class="lightBox" role="dialog" tabindex="-1" aria-label="gallerie photo" aria-hidden="true">
@@ -63,10 +80,6 @@
             </div>
             <h1 class="modal_content__title title--name"></h1>
             <form class="modal_form">
-                <div class="form-field">
-                    <label for="first_name" class="form-label">Prénom</label>
-                    <input class="form-input" type="text" name="first_name" id="first_name" required />
-                </div>
                 <div class="form-field">
                     <label for="last_name" class="form-label">Nom</label>
                     <input class="form-input" type="text" name="last_name" id="last_name" required />

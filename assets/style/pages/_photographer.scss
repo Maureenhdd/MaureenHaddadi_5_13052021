@@ -2,6 +2,7 @@
 @import "../utils/variables";
 .info_section {
   width: 200px;
+  height: 25px;
   position: fixed;
   bottom: 0;
   right: 80px;
@@ -23,5 +24,6 @@
 .info_section,
 .info_section__likes {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }

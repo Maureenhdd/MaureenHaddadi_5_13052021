@@ -24,7 +24,6 @@ function closeModal() {
 
 // GET VALUES 
 
-const firstName = document.getElementById('first_name')
 const lastName = document.getElementById('last_name')
 const email = document.getElementById('email')
 const message = document.getElementById('message')
@@ -33,5 +32,5 @@ const form = document.querySelector('.modal_form')
 
 form.addEventListener('submit', function (e) {
     e.preventDefault()
-    console.log("   message : " + message.value + "    prénom :" + firstName.value + "   nom :" + lastName.value + "   email :" + email.value)
+    console.log("   message : " + message.value + " nom :" + lastName.value + "   email :" + email.value)
 })

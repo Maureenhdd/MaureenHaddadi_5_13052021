@@ -89,24 +89,54 @@ function prepareOnclickIcon() {
 
 
 // filter 
-let inputFilter = document.querySelector('.filter_section__select')
-inputFilter.querySelectorAll('.filter_section__option').forEach(option => {
-    // ajoute click a chaque option 
+let inputFilter = document.querySelector('.filter_section__wrapper')
+let inputFilterList = document.querySelector('.filter_section__wrapper__list')
+let inputFilterIndicator = document.querySelector('.filter_section__wrapper__indicator')
+let inputFilterTop = document.querySelector('.filter_section__top')
+let openListI = document.querySelector('.open_list__i')
+
+
+
+inputFilterTop.addEventListener('click', () => {
+    inputFilterList.classList.toggle('filter_section__wrapper__list--active')
+    openListI.classList.toggle('open_list__i--active')
+    document.querySelectorAll('.filter_section__wrapper__list__option').forEach(i => {
+        i.setAttribute('tabindex', '0')
+    })
+})
+
+inputFilterIndicator.addEventListener('blur', () => {
+    inputFilterList.classList.remove('filter_section__wrapper__list--active')
+})
+inputFilter.querySelectorAll('.filter_section__wrapper__list__option').forEach(option => {
+    option.addEventListener('focus', () => {
+        inputFilterList.classList.add('filter_section__wrapper__list--active')
+    })
+    option.addEventListener('blur', () => {
+        inputFilterList.classList.remove('filter_section__wrapper__list--active')
+    })
+
     option.addEventListener('click', ({ target: { value } }) => {
         let arTmp = [...array_medias]
-        if (value === "Popularité") {
+        let optValue = option.getAttribute('data-value')
+        if (optValue === "Popularité") {
             arTmp.sort((a, b) => b.likes - a.likes)
         }
-        if (value == "Date") {
+        if (optValue == "Date") {
             arTmp.sort((a, b) => new Date(b.date) - new Date(a.date)
             )
         }
-        if (value == "Titre") {
+        if (optValue == "Titre") {
             arTmp.sort((a, b) =>
                 a.title.localeCompare(b.title)
             )
         }
         photo_list.innerHTML = arTmp.map(e => e.createElement()).join('')
+        inputFilterIndicator.innerText = optValue
+        inputFilterList.classList.remove('filter_section__wrapper__list--active')
+        openListI.classList.toggle('open_list__i--active')
+
+
         openLightBox()
         prepareOnclickIcon()
     })
@@ -115,9 +145,11 @@ inputFilter.querySelectorAll('.filter_section__option').forEach(option => {
 
 // simuler click quand je selectionne une valeur pour pouvoir changer la section 
 inputFilter.addEventListener('change', function (e) {
-    this.querySelector(`.filter_section__option[value=${e.target.value}]`).click()
+    this.querySelector(`.filter_section__wrapper__list__option[data-value=${e.target.value}]`).click()
+
+
 })
 // simuler click au pour la première value
-inputFilter.querySelector('.filter_section__option').click()
+inputFilter.querySelector('.filter_section__wrapper__list__option').click()
 
 
