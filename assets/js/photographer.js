@@ -8,7 +8,7 @@ let getId = url.searchParams.get('id')
 // GET INFOS
 let storage = JSON.parse(localStorage.getItem('state'))
 
-// HEADER PHOTOGRAPH
+// DISPLAY PHOTOGRAPH BANNER
 const photographerInfos = storage.photographs.find(e => e.id == getId)
 const photographer_banner = document.querySelector('.photographer_banner');
 photographer_banner.innerHTML = `
@@ -32,7 +32,7 @@ ${photographerInfos.tags.map(tag =>
 const modal_content__title = document.querySelector('.title--name')
 modal_content__title.innerHTML = photographerInfos.name
 
-// MEDIAS INFOS
+// GET MEDIAS INFOS
 let array_medias = Photograph.getMedia(storage, getId)
 const photo_list = document.querySelector('.photo_list');
 const info_section = document.querySelector('.info_section')
@@ -88,14 +88,14 @@ function prepareOnclickIcon() {
 }
 
 
-// filter 
+// CUSTOM SELECT 
 let inputFilter = document.querySelector('.filter_section__wrapper')
 let inputFilterList = document.querySelector('.filter_section__wrapper__list')
 let inputFilterIndicator = document.querySelector('.filter_section__wrapper__indicator')
 let inputFilterTop = document.querySelector('.filter_section__top')
 let openListI = document.querySelector('.open_list__i')
 
-
+// IF CLICK ON SELECT => OPEN LIST CHANGE TAB INDEX TO NAV IN 
 
 inputFilterTop.addEventListener('click', () => {
     inputFilterList.classList.toggle('filter_section__wrapper__list--active')
@@ -107,14 +107,17 @@ inputFilterTop.addEventListener('click', () => {
     })
 })
 
+// HANDLE BLUR EVENT WHEN NOT FOCUS ON ELEMENTS 
 inputFilterIndicator.addEventListener('blur', () => {
     inputFilterList.classList.remove('filter_section__wrapper__list--active')
 })
 
+// HANDLE CSS IF LEAVE LIST 
 inputFilter.querySelector('.filter_section__wrapper__list__option:last-child').addEventListener('blur', () => {
     inputFilter.classList.remove('filter_section__wrapper--active_border')
     openListI.classList.remove('open_list__i--active')
 })
+// FILTER + HANDLE COMPORTEMENT 
 inputFilter.querySelectorAll('.filter_section__wrapper__list__option').forEach(option => {
     option.addEventListener('focus', () => {
         inputFilterList.classList.add('filter_section__wrapper__list--active')
@@ -156,7 +159,7 @@ inputFilter.addEventListener('change', function (e) {
 
 
 })
-// simuler click au pour la première value
+// SIMULE CLICK FOR FIRST VALUE WHEN WE ARRIVE IN THE PAGE THE CONTENT IS ALREADUY FILTERED
 inputFilter.querySelector('.filter_section__wrapper__list__option').click()
 
 

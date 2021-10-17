@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+// FACTORY PATTERN => CHECK TYPE OF MEDIA 
 class MediaFactory {
     static generateMedia(data, photograph) {
         if (data.image) {
@@ -10,6 +11,8 @@ class MediaFactory {
         }
     }
 }
+
+// CLASSE TO CREATE A PHOTO 
 
 class Photo {
     constructor(data, photograph) {
@@ -41,7 +44,7 @@ class Photo {
         </figure>`
     }
 }
-
+// CLASS TO CREATE VIDEO
 class Video {
     constructor(data, photograph) {
         this.id = data.id

@@ -4,6 +4,8 @@
 const lightBox = document.querySelector('.lightBox')
 const closeLightBoxIcon = document.querySelector(".lightBox_content__close")
 let activeIndex = 0
+
+// close lightbox 
 closeLightBoxIcon.addEventListener("click", closeLightBox)
 function closeLightBox() {
     lightBox.style.display = "none"
@@ -12,6 +14,8 @@ function closeLightBox() {
     lightBox.setAttribute('tabindex', '-1')
 
 }
+
+// DISPLAY CONTENT FUNCTION TO CHECK IF IMG OR VIDEO
 
 function displayContent(e) {
     const title = e.getAttribute('data-title')
@@ -32,7 +36,7 @@ function displayContent(e) {
     }
 }
 
-
+// OPEN LIGHTBOX
 
 function openLightBox() {
     photo_list.querySelectorAll('.photo_card__img').forEach((e, index, array_photo) => {
@@ -49,18 +53,20 @@ function openLightBox() {
     })
 }
 
-
+// GOING ON NEXT MEDIA
 
 document.querySelector('.next').addEventListener('click', () => {
     activeIndex = (activeIndex + 1) % photo_list.querySelectorAll('.photo_card__img').length
     displayContent(photo_list.querySelectorAll('.photo_card__img')[activeIndex])
 })
 
+// GOING ON PREVIOUS MEDIA
 document.querySelector('.prev').addEventListener('click', () => {
     activeIndex = 0 > activeIndex - 1 ? photo_list.querySelectorAll('.photo_card__img').length - 1 : activeIndex - 1
     displayContent(photo_list.querySelectorAll('.photo_card__img')[activeIndex])
 })
 
+// HANDLE KEYBOARDS NAV 
 
 document.addEventListener('keydown', (e) => {
     if (e.code === "Enter") {

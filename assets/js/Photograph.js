@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+// CREATE CLASS FOR PHOTOGRAPH
 class Photograph {
     constructor(data) {
         this.id = data.id
